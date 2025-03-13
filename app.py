@@ -90,10 +90,9 @@ for message in st.session_state.chat_history:
         st.write(message)
 
 if feedback_results:
-    for idx, feedback in enumerate(feedback_results[:5]):  # First 5 feedbacks
+    for idx, feedback in enumerate(feedback_results[:100]):  # First 5 feedbacks
         message = feedback
         st.session_state.chat_history.append(message)
-        time.sleep(0.5)  # Simulate a slight delay for chat effect
         with st.chat_message("assistant"):
             st.write(message)
 
